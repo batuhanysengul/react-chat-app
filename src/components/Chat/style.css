@@ -1,0 +1,48 @@
+.msgs{
+    height: 100%;
+    overflow-y: scroll;
+    padding: 10px;
+    background-color: #d6d6d6;
+    border: 1px solid black;
+}
+
+.msg {
+    display: flex;
+}
+
+.msg p {
+    margin: 2vw 1vw;
+}
+
+.sent img {
+    border-radius: 50%;
+    height: 7vw;
+    border: 2px solid salmon;
+}
+
+
+.recieved img {
+    border-radius: 50%;
+    height: 7vw;
+    border: 2px solid blueviolet;
+}
+
+.sent{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: 50%;
+    float: right;
+}
+
+.recieved{
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    width: 50%;
+    float: left;
+}
+
+
