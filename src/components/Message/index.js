@@ -22,8 +22,8 @@ function Message({scroll}) {
     
 
   return (
-    <div className='sendMsg'>
-      <form onSubmit={sendMessage}>
+    <div >
+      <form onSubmit={sendMessage} className='sendMsg'>
         <input type="text" placeholder='Message...' value={msg} onChange={(e) => {
           setMsg(e.target.value);
         }}/>
