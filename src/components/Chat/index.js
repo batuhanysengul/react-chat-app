@@ -1,11 +1,12 @@
-import React, { useState, useEffect } from "react";
-import "./style.css";
+import React, { useState, useEffect, useRef } from "react";
 import Signout from "../Signout";
 import { auth, db } from "../Firebase/config";
 import Message from "../Message";
 
 function Chat() {
   const [messages, setMessages] = useState([]);
+
+  const scroll = useRef();
 
   useEffect(() => {
     db.collection("messages")
@@ -24,7 +25,7 @@ function Chat() {
         <div>
           <div
             key={id}
-            className={`msg ${uid === auth.currentUser ? "sent" : "recieved"}`}
+            className={`msg ${uid === auth.currentUser.uid ? "sent" : "recieved"}`}
           >
             <img src={photoURL} alt="" />
             <p>{text}</p>
@@ -32,7 +33,8 @@ function Chat() {
         </div>
       ))}
       </div>
-      <Message />
+      <Message scroll={scroll} />
+      <div ref={scroll}></div>
     </div>
   );
 }
